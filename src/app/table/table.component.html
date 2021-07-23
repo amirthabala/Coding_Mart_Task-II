@@ -1,0 +1,14 @@
+<table style="border:2px solid black;">
+<thead >
+<td>Address</td>
+<td>District</td>
+<td>State</td>
+<td>Zipcode</td>
+</thead>
+<tr *ngFor="let address of formattedAdddress">
+<td>{{address.address}}</td>
+<td>{{address.district}}</td>
+<td>{{address.state}}</td>
+<td>{{address.zipcode}}</td>
+</tr>
+</table>

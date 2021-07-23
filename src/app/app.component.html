@@ -1,0 +1,36 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+        
+</div>
+
+<ng-template #guest>
+<div style="width:50%; float:left;">
+<img src="./assets/OIP.jfif" width="80%" >
+</div>
+<div style="width:30%;float:left;height:100%;margin-top:15%;position:absolute;left:60%;margin-left:-5%">
+    <h1>SIGN IN</h1>
+    
+    <button (click)="auth.googleSignin()">
+        <i class='fab fa-google-plus-g'></i> Login with Google+
+    </button>
+ </div>
+
+</ng-template>
+
+
+<ng-template #authenticated>
+<div class="btn">
+<button style="padding:5px 10px;" (click)="auth.signOut()">Logout</button>
+</div>
+<div *ngIf="lines.length == 0">
+    <div class="input-area" *ngIf="auth.user$ | async as user">
+        <h2>Addess Text File</h2>
+        <input type="file" id="inp" (change)="fileChanged($event)"><BR>
+        <button style="margin-top:25px;" (click)="uploadDocument()">ADD FILE</button>
+        
+    </div>
+    </div>
+
+
+    <app-home *ngIf="lines.length > 0" [addressArray] = "lines"></app-home>
+</ng-template>
