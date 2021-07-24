@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { MapsAPILoader } from '@agm/core';
 
 
 @Component({
@@ -32,4 +33,5 @@ export class AppComponent {
     
     fileReader.readAsText(this.file);
   }
+
 }

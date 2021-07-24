@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,8 +34,12 @@ const Config = {
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(Config),
-    AngularFirestoreModule, // firestore
-    AngularFireAuthModule, // auth
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBir1ZMelQHc-dcgT-JTLYaTrJjd_qo5ZA',
+      libraries: ['places']
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
