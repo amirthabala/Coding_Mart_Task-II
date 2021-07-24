@@ -1,8 +1,15 @@
-table,td,thead,tr{
+table,td,tr{
   border:2px solid black;
   border-collapse:collapse;
 }
 
 td{
   padding:10px;
+  width: 25%;
+}
+
+.thead td{
+  background-color: black;
+  color: white;
+  border: 2px solid white;
 }
