@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   @Input() addressArray! : string[];
 
   isTableView = true;
+   
   ngOnInit(): void {
   console.log(this.addressArray);
   }
