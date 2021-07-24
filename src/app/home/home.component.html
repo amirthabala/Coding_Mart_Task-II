@@ -1,5 +1,10 @@
-<button (click)="isTableView=true" >Table View</button>
 <button (click)="isTableView=false">Map View</button>
+<button (click)="isTableView=true" >Table View</button>
 
+
+<div class="view">
 <app-table *ngIf="isTableView" [addresses]="addressArray" ></app-table>
+</div>
+<div class="view">
 <app-map *ngIf="!isTableView" [addresses]="addressArray"></app-map>
+</div>
